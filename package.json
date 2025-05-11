@@ -1,0 +1,12 @@
+{
+  "name": "dijkstra-tests",
+  "version": "1.0.0",
+  "description": "Dijkstra test suite using jsverify",
+  "main": "code.js",
+  "scripts": {
+    "test": "node code.test.js"
+  },
+  "dependencies": {
+    "jsverify": "^0.8.3"
+  }
+}

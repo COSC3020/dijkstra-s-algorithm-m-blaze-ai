@@ -23,3 +23,18 @@ inefficient.
 
 What is the big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+Runtime Analysis (using naive priority queue) :
+Initial distances for all nodes: $\Theta$(V)
+Main loop processes each node: $\Theta$(v)
+Extract minimum from unsorted array (for each node): $\Theta$(V)
+Attempt to relax and push to queue (for each edge (v, w)): $\Theta$(1) per edge -> $\Theta$(E) total
+
+Total work: $\Theta$(V * V + E) = $\Theta$((V^2) + E).
+
+“I certify that I have listed all sources used to complete this exercise, including the use
+of any Large Language Models. All of the work is my own, except where stated
+otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is
+suspected, charges may be filed against me without prior notice.”
+
+For this assignment, I asked Chat GPT for help choosing a data structure to work from, and for help with setting up the Github action and test cases (which have been modified to be in line with the code.test.js from other assignments).

@@ -1,7 +1,8 @@
-const assert = require("assert");
-const { dijkstra } = require("./code");
+const fs = require('fs');
+const jsc = require('jsverify');
 
-// Example graph as an adjacency list
+eval(fs.readFileSync('code.js') + '');
+
 const graph = {
   A: { B: 1, C: 4 },
   B: { C: 2, D: 5 },
@@ -9,11 +10,23 @@ const graph = {
   D: {},
 };
 
-const result = dijkstra(graph, "A");
 
-assert.strictEqual(result.A, 0);
-assert.strictEqual(result.B, 1);
-assert.strictEqual(result.C, 3);  // A -> B -> C
-assert.strictEqual(result.D, 4);  // A -> B -> C -> D
+const expected = {
+  A: 0,
+  B: 1,
+  C: 3,
+  D: 4
+};
 
-console.log("All tests passed.");
+
+const testDijkstra = jsc.forall("nat", function(_) {
+  const result = dijkstra(graph, "A");
+  return (
+    result.A === expected.A &&
+    result.B === expected.B &&
+    result.C === expected.C &&
+    result.D === expected.D
+  );
+});
+
+jsc.assert(testDijkstra);

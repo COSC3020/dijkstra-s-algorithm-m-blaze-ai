@@ -37,4 +37,4 @@ of any Large Language Models. All of the work is my own, except where stated
 otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is
 suspected, charges may be filed against me without prior notice.”
 
-For this assignment, I asked Chat GPT for help choosing a data structure to work from, and for help with setting up test cases/Github action.
+For this assignment, I asked Chat GPT for help choosing a data structure to work from, and for help with setting up the Github action and test cases (which have been modified to be in line with the code.test.js from other assignments).
